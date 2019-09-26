@@ -1,5 +1,3 @@
-package lc;
-
 public class KthSmallestElementInBst {
     //  Definition for a binary tree node.
     public static class TreeNode {

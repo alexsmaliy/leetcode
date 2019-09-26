@@ -1,5 +1,3 @@
-package lc;
-
 import java.util.Stack;
 
 public class ValidParentheses {
@@ -18,12 +16,19 @@ public class ValidParentheses {
                         stack.push(c);
                         break;
                     case ')':
-                        if (stack.isEmpty() || stack.peek() != '(') return false; else stack.pop(); break;
+                        if (stack.isEmpty() || stack.peek() != '(') return false;
+                        else stack.pop();
+                        break;
                     case ']':
-                        if (stack.isEmpty() || stack.peek() != '[') return false; else stack.pop(); break;
+                        if (stack.isEmpty() || stack.peek() != '[') return false;
+                        else stack.pop();
+                        break;
                     case '}':
-                        if (stack.isEmpty() || stack.peek() != '{') return false; else stack.pop(); break;
-                    default: ;
+                        if (stack.isEmpty() || stack.peek() != '{') return false;
+                        else stack.pop();
+                        break;
+                    default:
+                        break;
                 }
             }
             return stack.isEmpty();

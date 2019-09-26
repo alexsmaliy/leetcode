@@ -1,5 +1,3 @@
-package lc;
-
 public class FindMinimumInRotatedSortedArray {
     static class Solution {
         public int findMin(int[] nums) {

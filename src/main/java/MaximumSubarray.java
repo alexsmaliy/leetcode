@@ -1,5 +1,3 @@
-package lc;
-
 public class MaximumSubarray {
     public static void main(String[] args) {
         new Solution().maxSubArray(new int[] {-1,-2,-3,0,-1});

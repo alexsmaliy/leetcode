@@ -1,5 +1,3 @@
-package lc;
-
 import java.util.Arrays;
 
 public class ContainsDuplicate {

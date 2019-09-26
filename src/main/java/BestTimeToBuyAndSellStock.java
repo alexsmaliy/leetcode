@@ -1,5 +1,3 @@
-package lc;
-
 public class BestTimeToBuyAndSellStock {
     class Solution {
         public int maxProfit(int[] prices) {
