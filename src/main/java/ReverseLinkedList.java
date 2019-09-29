@@ -22,11 +22,11 @@ public class ReverseLinkedList {
     public static void main(String[] args) {
         ListNode aList = new ListNode(1);
         ListNode head = aList;
-        for (int i = 2; i < 5; i++) {
+        for (int i = 2; i < 8; i++) {
             head.next = new ListNode(i);
             head = head.next;
         }
-        System.out.println(new Solution().reverseListTailRec(aList));
+        System.out.println(new Solution().reverseList(aList));
     }
 
     static class Solution {
@@ -34,10 +34,10 @@ public class ReverseLinkedList {
             ListNode toCopy = head;
             ListNode acc = null;
             while (toCopy != null) {
-                ListNode copy = new ListNode(toCopy.val);
+                ListNode copy = toCopy;
+                toCopy = toCopy.next;
                 copy.next = acc;
                 acc = copy;
-                toCopy = toCopy.next;
             }
             return acc;
         }
