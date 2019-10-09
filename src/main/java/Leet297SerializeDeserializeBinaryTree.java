@@ -4,13 +4,13 @@ public class Leet297SerializeDeserializeBinaryTree {
     /**
        <p>Produces a string representing a root->left->right traversal of the tree:</p>
        <pre>
-               1
-              / \
-             2   3
-                /   ===> "1 2 . . 3 4 5 . . 6 . . ."
-               4
-              / \
-             5   6
+       1
+      / \
+     2   3
+        /   ===> "1 2 . . 3 4 5 . . 6 . . ."
+       4
+      / \
+     5   6
        </pre>
        <p>The deserialization is then as simple as:</p>
        <ul>
@@ -25,29 +25,44 @@ public class Leet297SerializeDeserializeBinaryTree {
      */
     public static class Codec {
 
-        private static final String SERIALIZATION_FORMAT = "%d %s %s";
         private static final char NULL_NODE = '.';
         private static final int[] POWERS_OF_10 = new int[] {
             1, 10, 100, 1_000, 10_000, 100_000, 1_000_000,
             10_000_000, 100_000_000, 1_000_000_000,
         };
 
-        // Encodes a tree to a single string.
+        /**
+         * Serialize to string. Chose {@link StringBuilder} instead of
+         * {@link String#format(String, Object...)}, because the former
+         * seems dramatically faster, at least on LeetCode with Java 8.
+         */
         public String serialize(TreeNode root) {
             if (root == null) return ".";
-            return String.format(SERIALIZATION_FORMAT,
-                root.val,
-                serialize(root.left),
-                serialize(root.right));
+            return serializeHelper(root).toString();
+        }
+
+        private StringBuilder serializeHelper(TreeNode root) {
+            StringBuilder sb = new StringBuilder();
+            sb.append(root.val);
+            sb.append(' ');
+            sb.append(root.left == null ? NULL_NODE : serialize(root.left));
+            sb.append(' ');
+            sb.append(root.right == null ? NULL_NODE : serialize(root.right));
+            return sb;
         }
 
 
+        /**
+         * Deserialize from string recursively. Default max call stack depth
+         * on modern JVMs is at least 2000, so this feels relatively safe.
+         */
         public TreeNode deserialize(String data) {
             if (data.charAt(0) == NULL_NODE) return null;
             Cursor c = new Cursor();
             return deserializeHelper(data, c, new TreeNode(0));
         }
 
+        // Surprisingly simple recursive parser.
         private static TreeNode deserializeHelper(String data, Cursor c, TreeNode head) {
             if (data.charAt(c.cursor) == NULL_NODE) {
                 c.cursor += 2;
@@ -64,6 +79,12 @@ public class Leet297SerializeDeserializeBinaryTree {
             return head;
         }
 
+        /**
+         * Targeting Java 8, so can't use the convenient
+         * {@link Integer#parseInt(CharSequence, int, int, int)}.
+         * The alternative would be parseInt() with a substring,
+         * which should be as cheap as this.
+         */
         private static int readPrimitiveValue(String data, Cursor c) {
             int oldCursor = c.cursor;
             while (data.charAt(c.cursor) != ' ') {
@@ -84,20 +105,22 @@ public class Leet297SerializeDeserializeBinaryTree {
         }
     }
 
+    // Because there are no pointers to int in Java.
     private static final class Cursor {
         private int cursor;
     }
 
-    // LeetCode's TreeNode definition, with usability additions.
+    // LeetCode's TreeNode definition, with quality-of-life additions.
     public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
+
         TreeNode(int x) { val = x; }
 
         @Override
         public String toString() {
-            return String.format(Codec.SERIALIZATION_FORMAT,
+            return String.format("%d %s %s",
                 this.val,
                 left == null ? Codec.NULL_NODE : left.toString(),
                 right == null ? Codec.NULL_NODE : right.toString());
