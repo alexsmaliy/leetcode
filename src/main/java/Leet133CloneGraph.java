@@ -16,6 +16,11 @@ import java.util.function.BiFunction;
  * creating duplicate nodes. Each recursive call, when it completes,
  * fills in the list of a given node's neighbors. The depth of
  * recursion is up to the number of nodes in the graph.
+ *
+ *   1 ----- 2  By the time we get to node 4, its neighbor should
+ *   |       |  be the same node 1 we started with, not a duplicate
+ *   |       |  node with value 1.
+ *   4 ----- 3
  */
 public class Leet133CloneGraph {
 
