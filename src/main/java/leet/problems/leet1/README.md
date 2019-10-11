@@ -19,5 +19,5 @@ lookup/membership data structure, like a map or a set. Then, as we encounter
 each value `nums[i]`, we can check whether we have already encountered
 `target - nums[i]`.
 
-The problem asks for a single, unique solution, but this process will find all
-such solutions, if any exist.
+The problem asks for a single, unique solution, but, in concept, this process
+will find all such solutions, if any exist.
