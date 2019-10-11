@@ -1,4 +1,6 @@
-public class FindMinimumInRotatedSortedArray {
+package leet.leet153;
+
+public class Leet153FindMinimumInRotatedSortedArray {
     static class Solution {
         public int findMin(int[] nums) {
             int length = nums.length;

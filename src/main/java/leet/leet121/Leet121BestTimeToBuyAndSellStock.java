@@ -1,4 +1,6 @@
-public class BestTimeToBuyAndSellStock {
+package leet.leet121;
+
+public class Leet121BestTimeToBuyAndSellStock {
     class Solution {
         public int maxProfit(int[] prices) {
             int min = Integer.MAX_VALUE;

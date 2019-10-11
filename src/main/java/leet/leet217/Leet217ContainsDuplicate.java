@@ -1,6 +1,8 @@
+package leet.leet217;
+
 import java.util.Arrays;
 
-public class ContainsDuplicate {
+public class Leet217ContainsDuplicate {
     static class Solution {
         public boolean containsDuplicate(int[] nums) {
             Arrays.sort(nums);

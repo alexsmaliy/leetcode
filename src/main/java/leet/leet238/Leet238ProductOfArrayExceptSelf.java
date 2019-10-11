@@ -1,6 +1,8 @@
+package leet.leet238;
+
 import java.util.Arrays;
 
-public class ProductOfArrayExceptSelf {
+public class Leet238ProductOfArrayExceptSelf {
     static class Solution {
         public int[] productExceptSelf(int[] nums) {
             if (nums.length == 1) { return new int[0]; }

@@ -1,3 +1,5 @@
+package leet.leet102;
+
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -7,7 +9,7 @@ import java.util.Queue;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class BinaryTreeLevelOrderTraversal {
+public class Leet102BinaryTreeLevelOrderTraversal {
     //  Definition for a binary tree node.
     public static class TreeNode {
         int val;

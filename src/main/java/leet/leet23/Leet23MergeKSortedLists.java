@@ -1,7 +1,9 @@
+package leet.leet23;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class MergeKSortedLists {
+public class Leet23MergeKSortedLists {
     public static void main(String[] args) {
         ListNode x = new ListNode(1);
         x.next = new ListNode(3);

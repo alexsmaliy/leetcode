@@ -1,4 +1,6 @@
-public class KthSmallestElementInBst {
+package leet.leet230;
+
+public class Leet230KthSmallestElementInBst {
     //  Definition for a binary tree node.
     public static class TreeNode {
         int val;

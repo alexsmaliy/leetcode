@@ -1,6 +1,8 @@
+package leet.leet20;
+
 import java.util.Stack;
 
-public class ValidParentheses {
+public class Leet20ValidParentheses {
     class Solution {
         public boolean isValid(String s) {
             if (s.length() == 0) return true;

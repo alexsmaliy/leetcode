@@ -1,4 +1,6 @@
-public class ValidateBinarySearchTree {
+package leet.leet98;
+
+public class Leet98ValidateBinarySearchTree {
     //  Definition for a binary tree node.
     public static class TreeNode {
         int val;
