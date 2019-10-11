@@ -5,10 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Leet15ThreeSum {
-    public static void main(String[] args) {
-        System.out.println(new Leet15ThreeSum().threeSum(new int[] {-1, 0, 1, 2, -1, -4}));
-    }
-
     public List<List<Integer>> threeSum(int[] nums) {
         int count = nums.length;
         if (count < 3) return new ArrayList<>();

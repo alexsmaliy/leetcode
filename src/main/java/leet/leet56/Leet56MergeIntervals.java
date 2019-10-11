@@ -32,15 +32,4 @@ public class Leet56MergeIntervals {
         }
         return Arrays.copyOf(intervals, currentBag + 1);
     }
-
-    public static void main(String[] args) {
-        System.out.println(Arrays.stream(new Leet56MergeIntervals().merge(
-            new int[][] {
-                new int[] {1,3},
-                new int[] {4, 5},
-                new int[] {6, 7},
-                new int[] {8, 9},
-                new int[] {15,18},
-                new int[] {18,19}})).map(Arrays::toString).collect(Collectors.toList()));
-    }
 }

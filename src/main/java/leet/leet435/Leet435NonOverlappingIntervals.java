@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class Leet435NonOverlappingIntervals {
-
     private static final Comparator<int[]> C = new Comparator<int[]>() {
         @Override
         public int compare(int[] a, int[] b) {

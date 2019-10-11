@@ -4,24 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Leet23MergeKSortedLists {
-    public static void main(String[] args) {
-        ListNode x = new ListNode(1);
-        x.next = new ListNode(3);
-        x.next.next = new ListNode(5);
-        x.next.next.next = new ListNode(7);
-        ListNode y = new ListNode(2);
-        y.next = new ListNode(4);
-        y.next.next = new ListNode(6);
-        ListNode z = new ListNode(0);
-        z.next = new ListNode(8);
-        ListNode w = null;
-        ListNode v = null;
-        ListNode u = new ListNode(9);
-        ListNode n = new Solution().mergeKLists(new ListNode[]{x, y, z, u, v, w});
-        System.out.println(n);
-    }
-
-    // Definition for singly-linked list.
+    // LeetCode's definition for singly-linked list.
     public static class ListNode {
         int val;
         ListNode next;
@@ -42,63 +25,61 @@ public class Leet23MergeKSortedLists {
         }
     }
 
-    static class Solution {
-        public ListNode mergeKLists(ListNode[] lists) {
-            int numLists = lists.length;
-            if (numLists == 0) {
-                return null;
-            }
-            MinHeap<ListNodeWithSize> heap = new MinHeap<>(numLists);
-            for (int i = 0; i < numLists; i++) {
-                heap.add(new ListNodeWithSize(lists[i]));
-            }
-            while (heap.size() > 1) {
-                ListNodeWithSize list1 = heap.remove();
-                ListNodeWithSize list2 = heap.remove();
-                heap.add(merge(list1, list2));
-            }
-            return heap.remove().list;
+    public ListNode mergeKLists(ListNode[] lists) {
+        int numLists = lists.length;
+        if (numLists == 0) {
+            return null;
         }
+        MinHeap<ListNodeWithSize> heap = new MinHeap<>(numLists);
+        for (int i = 0; i < numLists; i++) {
+            heap.add(new ListNodeWithSize(lists[i]));
+        }
+        while (heap.size() > 1) {
+            ListNodeWithSize list1 = heap.remove();
+            ListNodeWithSize list2 = heap.remove();
+            heap.add(merge(list1, list2));
+        }
+        return heap.remove().list;
+    }
 
-        static ListNodeWithSize merge(ListNodeWithSize list1, ListNodeWithSize list2) {
-            int size1 = list1.size;
-            int size2 = list2.size;
-            if (size1 == 0 && size2 == 0) return new ListNodeWithSize(null);
-            if (size1 == 0) return list2;
-            if (size2 == 0) return list1;
-            ListNode node1 = list1.list;
-            ListNode node2 = list2.list;
-            ListNode out;
-            if (node1.val < node2.val) {
-                out = node1;
+    static ListNodeWithSize merge(ListNodeWithSize list1, ListNodeWithSize list2) {
+        int size1 = list1.size;
+        int size2 = list2.size;
+        if (size1 == 0 && size2 == 0) return new ListNodeWithSize(null);
+        if (size1 == 0) return list2;
+        if (size2 == 0) return list1;
+        ListNode node1 = list1.list;
+        ListNode node2 = list2.list;
+        ListNode out;
+        if (node1.val < node2.val) {
+            out = node1;
+            node1 = node1.next;
+        } else {
+            out = node2;
+            node2 = node2.next;
+        }
+        ListNode ret = out;
+        while (node1 != null || node2 != null) {
+            if (node1 == null) {
+                out.next = node2;
+                out = out.next;
+                break;
+            } else if (node2 == null) {
+                out.next = node1;
+                out = out.next;
+                break;
+            } else if (node1.val < node2.val) {
+                out.next = node1;
+                out = out.next;
                 node1 = node1.next;
             } else {
-                out = node2;
+                out.next = node2;
+                out = out.next;
                 node2 = node2.next;
             }
-            ListNode ret = out;
-            while (node1 != null || node2 != null) {
-                if (node1 == null) {
-                    out.next = node2;
-                    out = out.next;
-                    break;
-                } else if (node2 == null) {
-                    out.next = node1;
-                    out = out.next;
-                    break;
-                } else if (node1.val < node2.val) {
-                    out.next = node1;
-                    out = out.next;
-                    node1 = node1.next;
-                } else {
-                    out.next = node2;
-                    out = out.next;
-                    node2 = node2.next;
-                }
-            }
-            out.next = null;
-            return new ListNodeWithSize(ret, size1 + size2);
         }
+        out.next = null;
+        return new ListNodeWithSize(ret, size1 + size2);
     }
 
     static class ListNodeWithSize implements Comparable<ListNodeWithSize> {

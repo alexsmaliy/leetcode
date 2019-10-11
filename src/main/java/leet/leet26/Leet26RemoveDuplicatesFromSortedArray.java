@@ -6,7 +6,7 @@ package leet.leet26;
     counting from the left.
  */
 public class Leet26RemoveDuplicatesFromSortedArray {
-    public static int removeDuplicates(int[] nums) {
+    public int removeDuplicates(int[] nums) {
         if (nums == null) return 0;
         if (nums.length < 2) return nums.length;
         int cursor = 0;
