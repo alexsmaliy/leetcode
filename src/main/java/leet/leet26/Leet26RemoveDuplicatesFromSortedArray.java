@@ -1,3 +1,5 @@
+package leet.leet26;
+
 /*
     Remove duplicates in place from a sorted array.
     Return the length of the deduplicated portion,

@@ -1,3 +1,5 @@
+package leet.leet1047;
+
 /*
     Greedily remove all repeats of two of the same character
     from a string, including repeats that appear when a nested

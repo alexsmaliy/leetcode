@@ -1,3 +1,5 @@
+package leet.leet70;
+
 public class Leet70ClimbingStairs {
     static class Solution {
         public int climbStairs(int n) {

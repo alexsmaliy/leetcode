@@ -1,3 +1,5 @@
+package leet.leet19;
+
 public class Leet19RemoveNthNodeFromEndOfList {
     // LeetCode's definition for singly-linked list, with quality of life additions.
     public static class ListNode {
