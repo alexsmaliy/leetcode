@@ -1,18 +1,12 @@
 package leet.problems.leet100;
 
+import leet.types.TreeNode;
+
 import java.util.ArrayDeque;
 import java.util.Objects;
 import java.util.Queue;
 
 public class Leet100SameTree {
-    // Definition for a binary tree node.
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
-
     public boolean isSameTreeRecursive(TreeNode p, TreeNode q) {
         if (p == null || q == null) {
             return Objects.equals(p, q);

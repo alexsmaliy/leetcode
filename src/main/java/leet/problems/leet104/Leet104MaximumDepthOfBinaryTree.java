@@ -1,5 +1,7 @@
 package leet.problems.leet104;
 
+import leet.types.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -7,14 +9,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Leet104MaximumDepthOfBinaryTree {
-    // LeetCode's definition for a binary tree node.
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
-
     // A sensible solution: Traverse the tree depth-first.
     // At each branch, recursively pick the child with the
     // deepest subtree.

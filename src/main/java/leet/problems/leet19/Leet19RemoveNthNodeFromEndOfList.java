@@ -1,18 +1,8 @@
 package leet.problems.leet19;
 
+import leet.types.ListNode;
+
 public class Leet19RemoveNthNodeFromEndOfList {
-    // LeetCode's definition for singly-linked list, with quality of life additions.
-    public static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
-
-        @Override
-        public String toString() {
-            return String.format("%d -> %s", this.val, this.next);
-        }
-    }
-
     public static ListNode removeNthFromEnd(ListNode head, int n) {
         int indexFromEnd = indexFromEnd(head, n);
         if (indexFromEnd == n) {

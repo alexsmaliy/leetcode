@@ -1,14 +1,8 @@
 package leet.problems.leet230;
 
-public class Leet230KthSmallestElementInBst {
-    //  Definition for a binary tree node.
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
+import leet.types.TreeNode;
 
+public class Leet230KthSmallestElementInBst {
     public int kthSmallest(TreeNode root, int k) {
         TreeNode[] traceback = new TreeNode[1000];
         traceback[0] = root;

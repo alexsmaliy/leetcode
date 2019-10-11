@@ -1,30 +1,8 @@
 package leet.problems.leet23;
 
-import java.util.ArrayList;
-import java.util.List;
+import leet.types.ListNode;
 
 public class Leet23MergeKSortedLists {
-    // LeetCode's definition for singly-linked list.
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            List<String> s = new ArrayList<>();
-            ListNode tmp = this;
-            while (tmp != null) {
-                s.add(tmp.val + "");
-                tmp = tmp.next;
-            }
-            return String.join(" -> ", s);
-        }
-    }
-
     public ListNode mergeKLists(ListNode[] lists) {
         int numLists = lists.length;
         if (numLists == 0) {

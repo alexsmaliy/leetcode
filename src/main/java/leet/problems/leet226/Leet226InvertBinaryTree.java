@@ -1,17 +1,11 @@
 package leet.problems.leet226;
 
+import leet.types.TreeNode;
+
 import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class Leet226InvertBinaryTree {
-    // Definition for a binary tree node.
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
-
     public TreeNode invertTree(TreeNode root) {
         if (root == null || (root.left == null && root.right == null)) {
             return root;

@@ -1,5 +1,7 @@
 package leet.problems.leet133;
 
+import leet.types.Node;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,20 +27,6 @@ import java.util.function.BiFunction;
  *   4 ----- 3
  */
 public class Leet133CloneGraph {
-
-    // LeetCode's definition for a Node.
-    static class Node {
-        public int val;
-        public List<Node> neighbors;
-
-        public Node() {}
-
-        public Node(int _val,List<Node> _neighbors) {
-            val = _val;
-            neighbors = _neighbors;
-        }
-    }
-
     public Node cloneGraph(Node node) {
         Map<Integer, Node> created = new HashMap<>();
         return dfs(node, created);

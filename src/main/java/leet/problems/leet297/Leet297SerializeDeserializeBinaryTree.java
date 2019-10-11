@@ -1,5 +1,7 @@
 package leet.problems.leet297;
 
+import leet.types.TreeNode;
+
 import java.util.Objects;
 
 public class Leet297SerializeDeserializeBinaryTree {
@@ -110,32 +112,5 @@ public class Leet297SerializeDeserializeBinaryTree {
     // Because there are no pointers to int in Java.
     private static final class Cursor {
         private int cursor;
-    }
-
-    // LeetCode's TreeNode definition, with quality-of-life additions.
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) { val = x; }
-
-        @Override
-        public String toString() {
-            return String.format("%d %s %s",
-                this.val,
-                left == null ? Codec.NULL_NODE : left.toString(),
-                right == null ? Codec.NULL_NODE : right.toString());
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (o == null) return false;
-            if (!(o instanceof TreeNode)) return false;
-            TreeNode o2 = (TreeNode) o;
-            return o2.val == this.val
-                && Objects.equals(this.left, o2.left)
-                && Objects.equals(this.right, o2.right);
-        }
     }
 }

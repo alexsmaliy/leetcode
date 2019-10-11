@@ -1,14 +1,8 @@
 package leet.problems.leet98;
 
-public class Leet98ValidateBinarySearchTree {
-    // LeetCode's definition for a binary tree node.
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
+import leet.types.TreeNode;
 
+public class Leet98ValidateBinarySearchTree {
     public boolean isValidBST(TreeNode root) {
         return isValidBSTRange(root, Integer.MIN_VALUE - 1L, Integer.MAX_VALUE + 1L);
     }

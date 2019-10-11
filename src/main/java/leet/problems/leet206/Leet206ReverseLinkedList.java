@@ -1,29 +1,8 @@
 package leet.problems.leet206;
 
-import java.util.ArrayList;
-import java.util.List;
+import leet.types.ListNode;
 
 public class Leet206ReverseLinkedList {
-
-    // LeetCode's definition for singly-linked list,
-    // with slight usability modifications.
-    public static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
-
-        @Override
-        public String toString() {
-            List<String> x = new ArrayList<>();
-            ListNode me = this;
-            while (me != null) {
-                x.add(me.val + "");
-                me = me.next;
-            }
-            return String.join(" -> ", x);
-        }
-    }
-
     // The iterative process to reverse a singly linked list.
     // This is written as an in-place reversal, but doesn't
     // have to be. We iterate down the list with an accumulator.
