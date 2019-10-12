@@ -3,7 +3,7 @@ package leet.problems.leet23;
 import leet.types.ListNode;
 
 public class Leet23MergeKSortedLists {
-    public ListNode mergeKLists(ListNode[] lists) {
+    public static ListNode mergeKLists(ListNode[] lists) {
         int numLists = lists.length;
         if (numLists == 0) {
             return null;
@@ -20,7 +20,7 @@ public class Leet23MergeKSortedLists {
         return heap.remove().list;
     }
 
-    static ListNodeWithSize merge(ListNodeWithSize list1, ListNodeWithSize list2) {
+    private static ListNodeWithSize merge(ListNodeWithSize list1, ListNodeWithSize list2) {
         int size1 = list1.size;
         int size2 = list2.size;
         if (size1 == 0 && size2 == 0) return new ListNodeWithSize(null);
@@ -60,21 +60,22 @@ public class Leet23MergeKSortedLists {
         return new ListNodeWithSize(ret, size1 + size2);
     }
 
-    static class ListNodeWithSize implements Comparable<ListNodeWithSize> {
-        int size;
-        ListNode list;
+    private static class ListNodeWithSize implements Comparable<ListNodeWithSize> {
+        private final int size;
+        private final ListNode list;
 
-        ListNodeWithSize(ListNode list) {
+        private ListNodeWithSize(ListNode list) {
             this.list = list;
             ListNode tmp = list;
-            this.size = 0;
+            int size = 0;
             while (tmp != null) {
                 tmp = tmp.next;
                 size++;
             }
+            this.size = size;
         }
 
-        ListNodeWithSize(ListNode list, int size) {
+        private ListNodeWithSize(ListNode list, int size) {
             this.list = list;
             this.size = size;
         }
@@ -85,27 +86,30 @@ public class Leet23MergeKSortedLists {
         }
     }
 
-    static class MinHeap<T extends Comparable<? super T>> {
-        Object[] data;
-        int cursor;
+    private static final class MinHeap<T extends Comparable<? super T>> {
+        private final Object[] data;
+        private int cursor;
 
-        MinHeap(int size) {
+        public MinHeap(int size) {
             this.cursor = 1;
             this.data = new Object[size + 1];
         }
 
-        int size() {
+        public int size() {
             return cursor - 1;
         }
 
-        T remove() {
+        public T remove() {
             T ret = (T) data[1];
             cursor--;
             data[1] = data[cursor];
             data[cursor] = null;
             int index = 1;
             while (index <= size() / 2) {
-                int smallerChild = data[2 * index + 1] != null && ((T) data[2 * index]).compareTo((T) data[2 * index + 1]) > 0
+                boolean rightChildExists = data[2 * index + 1] != null;
+                T leftChild = (T) data[2 * index];
+                T rightChild = (T) data[2 * index + 1];
+                int smallerChild = rightChildExists && leftChild.compareTo(rightChild) > 0
                     ? 2 * index + 1
                     : 2 * index;
                 if (((T) data[index]).compareTo((T) data[smallerChild]) > 0) {
@@ -118,7 +122,7 @@ public class Leet23MergeKSortedLists {
             return ret;
         }
 
-        void add(T element) {
+        public void add(T element) {
             data[cursor] = element;
             int elem = cursor;
             int parent = cursor / 2;
@@ -134,7 +138,7 @@ public class Leet23MergeKSortedLists {
             cursor++;
         }
 
-        void swap(int x, int y) {
+        private void swap(int x, int y) {
             T tmp = (T) data[x];
             data[x] = data[y];
             data[y] = tmp;
