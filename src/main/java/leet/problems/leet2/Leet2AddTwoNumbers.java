@@ -3,7 +3,7 @@ package leet.problems.leet2;
 import leet.types.ListNode;
 
 public class Leet2AddTwoNumbers {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if (l1 == null) return l2;
         if (l2 == null) return l1;
         int sum = l1.val + l2.val;

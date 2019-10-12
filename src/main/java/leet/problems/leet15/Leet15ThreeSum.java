@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Leet15ThreeSum {
-    public List<List<Integer>> threeSum(int[] nums) {
+    public static List<List<Integer>> threeSum(int[] nums) {
         int count = nums.length;
         if (count < 3) return new ArrayList<>();
         Arrays.sort(nums);
