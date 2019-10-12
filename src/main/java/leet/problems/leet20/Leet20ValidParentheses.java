@@ -3,35 +3,35 @@ package leet.problems.leet20;
 import java.util.Stack;
 
 public class Leet20ValidParentheses {
-    public boolean isValid(String s) {
+    public static boolean isValid(String s) {
         if (s.length() == 0) return true;
         if (s.length() == 1) return false;
-        Stack<Character> stack = new Stack<>();
-        stack.push(s.charAt(0));
+        char[] stack = new char[s.length()];
+        int cursor = 0;
+        stack[cursor] = s.charAt(0);
         for (int i = 1; i < s.length(); i++) {
             char c = s.charAt(i);
             switch (c) {
                 case '(':
                 case '[':
                 case '{':
-                    stack.push(c);
+                    cursor++;
+                    stack[cursor] = c;
                     break;
                 case ')':
-                    if (stack.isEmpty() || stack.peek() != '(') return false;
-                    else stack.pop();
+                    if (cursor == -1 || stack[cursor] != '(') return false;
+                    else cursor--;
                     break;
                 case ']':
-                    if (stack.isEmpty() || stack.peek() != '[') return false;
-                    else stack.pop();
+                    if (cursor == -1 || stack[cursor] != '[') return false;
+                    else cursor--;
                     break;
                 case '}':
-                    if (stack.isEmpty() || stack.peek() != '{') return false;
-                    else stack.pop();
-                    break;
-                default:
+                    if (cursor == -1 || stack[cursor] != '{') return false;
+                    else cursor--;
                     break;
             }
         }
-        return stack.isEmpty();
+        return cursor == -1;
     }
 }
