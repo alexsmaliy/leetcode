@@ -23,6 +23,7 @@ Table of Contents
 | :--- | :--- |
 | [LC 1](https://leetcode.com/problems/two-sum/) | [Two Sum](./src/main/java/leet/problems/leet1) |
 | [LC 2](https://leetcode.com/problems/add-two-numbers/) | [Add Two Numbers](./src/main/java/leet/problems/leet2)
+| [LC 3](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | [Longest Substring Without Repeating Characters](./src/main/java/leet/problems/leet3) |
 | [LC 15](https://leetcode.com/problems/3sum/) | [3Sum](./src/main/java/leet/problems/leet15) |
 | [LC 19](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | [Remove Nth Node from End of List](./src/main/java/leet/problems/leet19) |
 | [LC 20](https://leetcode.com/problems/valid-parentheses/) | [Valid Parentheses](./src/main/java/leet/problems/leet20) |
