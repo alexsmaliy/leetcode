@@ -20,3 +20,5 @@ order. If the *i*-th character is identical to its predecessor, we decrement the
 cursor variable by one ("remove" the duplicate). Otherwise, we increment the
 cursor by one and copy the *i*-th character in *S* to that position in the
 output.
+
+A more general version of this problem is encountered in [LC 1209](../leet1209).
