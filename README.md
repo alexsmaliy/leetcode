@@ -40,6 +40,7 @@ Table of Contents
 | [LC 121](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | [Best Time to Buy and Sell Stock](./src/main/java/leet/problems/leet121) |
 | [LC 133](https://leetcode.com/problems/clone-graph/) | [Clone Graph](./src/main/java/leet/problems/leet133) |
 | [LC 153](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | [Find Minimum in Rotated Sorted Array](./src/main/java/leet/problems/leet153) |
+| [LC 200](https://leetcode.com/problems/number-of-islands/) | [Number of Islands](./src/main/java/leet/problems/leet200) |
 | [LC 206](https://leetcode.com/problems/reverse-linked-list/) | [Reverse Linked List](./src/main/java/leet/problems/leet206) |
 | [LC 207](https://leetcode.com/problems/course-schedule/) | [Course Schedule](./src/main/java/leet/problems/leet207) |
 | [LC 208](https://leetcode.com/problems/implement-trie-prefix-tree/) | [Implement Trie (Prefix Tree)](./src/main/java/leet/problems/leet208) |
