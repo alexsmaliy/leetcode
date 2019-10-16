@@ -33,7 +33,7 @@ other words, we consider every possible cycle length in order.
 
 <pre><tt>1 &rarr; 2 &rarr; 3 &rarr; 4 &#x21c6 5</tt>
 
-<tt>[1, 2, 3, 4, 5, 4, 5, 4, &hellip;]</tt>
+<tt>[1, 2, 3, 4, 5, 4, 5, 4, &hellip;]
  &uarr;  &uarr;  &uarr;  &uarr;     &uarr;     &uarr;
  <u>T  H</u>  &uarr;  &uarr;     &uarr;     &uarr;
     &uarr;  &uarr;  &uarr;     &uarr;     &uarr;
@@ -41,7 +41,7 @@ other words, we consider every possible cycle length in order.
        &uarr;  &uarr;     &uarr;     &uarr;
        <u>T  &uarr;     H</u>     &uarr;
           &uarr;           &uarr;
-          <u>T           H</u> &#x2714;
+          <u>T           H</u> &#x2714;</tt>
 </pre>
 
 Suppose the input list has a long prefix of unique value before the cycle starts
@@ -53,7 +53,8 @@ on.
 
 In other words, we'd have to do a bit more work to find the shortest cycle or
 where cycling started, but we'll definitely know that there's a cycle somewhere
-eventually.
+eventually. Not surprisingly, [Problem 142](../leet142) asks us to do exactly
+that.
 
 Tortoise and hare is very cheap. Its memory overhead is just the two pointers,
 and its runtime is either the length of the list (if there is no cycle), or the
