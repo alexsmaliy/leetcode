@@ -18,6 +18,61 @@ public class ListNode {
 
     @Override
     public String toString() {
-        return String.format("%d -> %s", this.val, this.next);
+        int[] cycle = indexOfFirstCycle();
+        if (cycle == null) {
+            return String.format("%d -> %s", this.val, this.next);
+        } else {
+            ListNode n = this;
+            StringBuilder s = new StringBuilder();
+            for (int i = 0; i < cycle[0] + cycle[1]; i++) {
+                s.append(n.val);
+                s.append(" -> ");
+                n = n.next;
+            }
+            s.append("(repeat previous ");
+            s.append(cycle[1]);
+            if (cycle[1] > 1) {
+                s.append(" elements)");
+            } else {
+                s.append(" element)");
+            }
+            return s.toString();
+        }
+    }
+
+    private int[] indexOfFirstCycle() {
+        if (this.next == null) return null;
+        ListNode tortoise = this;
+        ListNode hare = this.next;
+        int tortoiseSteps = 0;
+        int hareSteps = 1;
+        while (true) {
+            if (tortoise == hare) {
+                break;
+            }
+            tortoise = tortoise.next;
+            tortoiseSteps++;
+            if (hare.next == null || hare.next.next == null) return null;
+            hare = hare.next.next;
+            hareSteps += 2;
+        }
+        int cycleLength = 1;
+        hare = tortoise.next;
+        while (tortoise != hare) {
+            hare = hare.next;
+            cycleLength++;
+        }
+        ListNode a = this;
+        ListNode b = this;
+        for (int i = 0; i < cycleLength; i++) {
+            b = b.next;
+        }
+        int loopStart = 0;
+        while (a != b) {
+            a = a.next;
+            b = b.next;
+            loopStart++;
+        }
+        return new int[] {loopStart, cycleLength};
     }
 }
