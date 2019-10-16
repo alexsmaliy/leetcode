@@ -3,10 +3,10 @@ package leet.problems.leet242;
 import java.util.Arrays;
 
 public class Leet242ValidAnagram {
-    public boolean isAnagram(String s, String t) {
+    public static boolean isAnagram(String s, String t) {
         if (s.length() != t.length()) return false;
-        byte[] countsS = new byte[26];
-        byte[] countsT = new byte[26];
+        int[] countsS = new int[26];
+        int[] countsT = new int[26];
         char[] sarr = s.toLowerCase().toCharArray();
         char[] tarr = t.toLowerCase().toCharArray();
         for (int i = 0; i < sarr.length; i++) {
