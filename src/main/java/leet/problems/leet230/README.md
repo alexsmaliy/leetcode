@@ -24,10 +24,4 @@ If you draw a BST, you will find that:
 Because the BST implementation that LeetCode provides does not link nodes to
 their parents, we have to keep track of how far up we have to go using a LIFO
 stack.
-<pre>
-     4               4               4               4
-   &#x2b0b;   &#x2198;          &#x2199;   &#x2198;          &#x2199;   &#x2198;          &#x2b08;   &#x2198;
-  2     6         2     6         2     6         2     6
-&#x2b0b; &#x2198;   &#x2199; &#x2198;      &#x2b08; &#x2198;  &#x2199; &#x2198;      &#x2199; &#x2b0a;   &#x2199; &#x2198;      &#x2199; &#x2b09;  &#x2199; &#x2198;
-1   3 5   7     1   3 5   7     1   3 5    7    1   3 5    7
-</pre>
+
