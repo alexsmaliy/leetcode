@@ -9,16 +9,6 @@ package leet.types;
  * with testing, that do not affect functionality.
  */
 public class ListNode {
-    public static void main(String[] args) {
-        ListNode a = new ListNode(1);
-        ListNode b = new ListNode(2);
-        ListNode c = new ListNode(3);
-        a.next = b;
-        b.next = c;
-        c.next = c;
-        System.out.println(a.toString());
-    }
-
     public int val;
     public ListNode next;
 
