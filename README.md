@@ -39,7 +39,8 @@ Table of Contents
 | [LC 104](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | [Maximum Depth of Binary Tree](./src/main/java/leet/problems/leet104) |
 | [LC 121](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | [Best Time to Buy and Sell Stock](./src/main/java/leet/problems/leet121) |
 | [LC 133](https://leetcode.com/problems/clone-graph/) | [Clone Graph](./src/main/java/leet/problems/leet133) |
-| [Lc 141](https://leetcode.com/problems/linked-list-cycle/) | [Linked List Cycle](./src/main/java/leet/problems/leet141) |
+| [LC 141](https://leetcode.com/problems/linked-list-cycle/) | [Linked List Cycle](./src/main/java/leet/problems/leet141) |
+| [LC 142](https://leetcode.com/problems/linked-list-cycle-ii/) | [Linked List Cycle II](./src/main/java/leet/problems/leet142) |
 | [LC 153](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | [Find Minimum in Rotated Sorted Array](./src/main/java/leet/problems/leet153) |
 | [LC 200](https://leetcode.com/problems/number-of-islands/) | [Number of Islands](./src/main/java/leet/problems/leet200) |
 | [LC 206](https://leetcode.com/problems/reverse-linked-list/) | [Reverse Linked List](./src/main/java/leet/problems/leet206) |
