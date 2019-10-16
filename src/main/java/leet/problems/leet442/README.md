@@ -43,10 +43,13 @@ hundred million.
 
 Putting the pieces together is simple:
 - Iterate *i* from 1 to *n*.
-- Subtract *n*&thinsp;+&thinsp;1 from each `a[a[i]]`.
+- Recover the original value of `a[i]`, in case we have already modified it.
+  Namely, add *n*&thinsp;+&thinsp;1 back into it more than twice and take the
+  remainder modulo *n*&thinsp;+&thinsp;1.
+- Index into *a* with the original value of `a[i]` and subtract
+  *n*&thinsp;+&thinsp;1 from that element.
 - Iterate from 1 to *n* again.
-- If `a[i]` looks like it was modified twice, recover its original value by
-  adding *n*&thinsp;+&thinsp;1 back into it more than twice and taking modulo.
-  That's your duplicate number (i.e., there are two elements *a<sub>m</sub>* and
+- If `a[i]` looks like it was modified twice, *i* is the number that's in *a*
+  more than once (i.e., there are two elements *a<sub>m</sub>* and
   *a<sub>n</sub>* that are equal to each other, so that when we modified
   `a[a[m]]` and `a[a[n]]`, we were actually modifying the same element twice).
