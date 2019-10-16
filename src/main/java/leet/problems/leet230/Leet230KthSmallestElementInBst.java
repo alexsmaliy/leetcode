@@ -3,7 +3,7 @@ package leet.problems.leet230;
 import leet.types.TreeNode;
 
 public class Leet230KthSmallestElementInBst {
-    public int kthSmallest(TreeNode root, int k) {
+    public static int kthSmallest(TreeNode root, int k) {
         TreeNode[] traceback = new TreeNode[1000];
         traceback[0] = root;
         int depth = min(root, traceback, 0);
@@ -13,7 +13,7 @@ public class Leet230KthSmallestElementInBst {
         return traceback[depth].val;
     }
 
-    public static int min(TreeNode node, TreeNode[] traceback, int depth) {
+    private static int min(TreeNode node, TreeNode[] traceback, int depth) {
         while (node.left != null) {
             node = node.left;
             depth++;
@@ -22,7 +22,7 @@ public class Leet230KthSmallestElementInBst {
         return depth;
     }
 
-    public static int next(TreeNode[] traceback, int depth) {
+    private static int next(TreeNode[] traceback, int depth) {
         TreeNode node = traceback[depth];
         if (node.right == null) {
             while (traceback[depth - 1].right == traceback[depth]) {

@@ -8,7 +8,7 @@ public class Leet206ReverseLinkedList {
     // have to be. We iterate down the list with an accumulator.
     // At each step, we append the accumulator to the current
     // node, then set the accumulator to the result of that.
-    public ListNode reverseList(ListNode head) {
+    public static ListNode reverseList(ListNode head) {
         ListNode acc = null;
         while (head != null) {
             ListNode copy = head;
@@ -23,7 +23,7 @@ public class Leet206ReverseLinkedList {
     // We recursively reverse the tail of the list, then
     // append the head to the end of the result. The repeated
     // traversal is wasteful.
-    public ListNode reverseListRec(ListNode head) {
+    public static ListNode reverseListRec(ListNode head) {
         if (head.next == null) {
             return head;
         }
@@ -42,11 +42,11 @@ public class Leet206ReverseLinkedList {
     // Finally, recurse into the rest of the list until
     // the end is reached. This is not an in-place reversal,
     // but certainly can be rewritten as one.
-    public ListNode reverseListTailRec(ListNode head) {
+    public static ListNode reverseListTailRec(ListNode head) {
         return reverseListTailRec(head, null);
     }
 
-    public ListNode reverseListTailRec(ListNode head, ListNode acc) {
+    public static ListNode reverseListTailRec(ListNode head, ListNode acc) {
         if (head == null) return acc;
         ListNode copy = new ListNode(head.val);
         copy.next = acc;

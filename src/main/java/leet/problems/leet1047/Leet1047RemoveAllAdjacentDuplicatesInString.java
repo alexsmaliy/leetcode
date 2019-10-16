@@ -1,12 +1,7 @@
 package leet.problems.leet1047;
 
-/*
-    Greedily remove all repeats of two of the same character
-    from a string, including repeats that appear when a nested
-    repeat has been removed.
- */
 public class Leet1047RemoveAllAdjacentDuplicatesInString {
-    public String removeDuplicates(String S) {
+    public static String removeDuplicates(String S) {
         if (S == null || S.length() < 2) return S;
         char[] c = new char[S.length()];
         int cursorTo = -1;
