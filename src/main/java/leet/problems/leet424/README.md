@@ -18,10 +18,9 @@ reproducing this is an interview, and certainly have no hope of extending this
 mechanism of action to another problem context. This is not a *medium* problem
 for me.
 
-What I did come up with was a worst-case *n*&sup2; solution (where *n* is the
-length of the string), in which I simply iterated over the string and, for each
-letter, checked how far I'd get on *k* repairs (worst case here is a string
-`AAAA…` that needs no repair). I special-cased cases like `BAAAB` by adding a
+What I did come up with was a solution, in which I simply iterated over the
+string and, for each letter, checked how far I'd get on *k* repairs
+(worst case here is a string. I special-cased cases like `BAAAB` by adding a
 look-ahead if a look-behind reached the beginning of the string with the
 budget of repair operations not yet exhausted.
 
@@ -44,7 +43,17 @@ In any case, here's the clever solution:
   represents the sliding window growing by 1 in size.
 - Because the window never shrinks, by the time *r* reaches the end of the
   string, the window is as large as it has ever been, and it's enough to report
-  its current width |*s*|&thinsp;&minus;&thinsp;&ell;.
+  its current width, |*s*|&thinsp;&minus;&thinsp;&ell;.
+<pre><tt>[A B B C A B B C]    k = 2
+ L/R                 [A: 1, B: 0, C: 0], m = 1, m + k > 1
+ L&middot;R                 [A: 1, B: 1, C: 0], m = 1, m + k > 2
+ L&middot;&middot;&middot;R               [A: 1, B: 2, C: 0], m = 2, m + k > 3
+ L&middot;&middot;&middot;&middot;&middot;R             [A: 1, B: 2, C: 1], m = 2, m + k = 4
+   L&middot;&middot;&middot;&middot;&middot;R           [A: 1, B: 2, C: 1], m = 2, m + k = 4
+   L&middot;&middot;&middot;&middot;&middot;&middot;&middot;R         [A: 1, B: 3, C: 1], m = 3, m + k = 5
+   L&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;R       [A: 1, B: 4, C: 1], m = 4, m + k = 6
+     L&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;R     [A: 1, B: 3, C: 2], m = 4, m + k = 6
+</tt></pre>
 
 The array of character counts is always up to date. We increment and decrement
 the count of a letter every time the right edge advances on one or the left edge
