@@ -55,6 +55,7 @@ Table of Contents
 | [LC 297](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) | [Serialize and Deserialize Binary Tree](./src/main/java/leet/problems/leet297) |
 | [LC 300](https://leetcode.com/problems/longest-increasing-subsequence/) | [Longest Increasing Subsequence](./src/main/java/leet/problems/leet300) |
 | [LC 322](https://leetcode.com/problems/coin-change/) | [Coin Change](./src/main/java/leet/problems/leet322) |
+| [LC 424](https://leetcode.com/problems/longest-repeating-character-replacement/) | [Longest Repeating Character Replacement](./src/main/java/leet/problems/leet424) |
 | [LC 435](https://leetcode.com/problems/non-overlapping-intervals/) | [Non-Overlapping Intervals](./src/main/java/leet/problems/leet435) |
 | [LC 442](https://leetcode.com/problems/find-all-duplicates-in-an-array/) | [Find All Duplicates in an Array](./src/main/java/leet/problems/leet442) |
 | [LC 1047](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/) | [Remove All Adjacent Duplicates in String](./src/main/java/leet/problems/leet1047) |
