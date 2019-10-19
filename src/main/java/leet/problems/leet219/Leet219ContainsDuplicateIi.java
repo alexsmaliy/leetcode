@@ -10,6 +10,7 @@ import java.util.Comparator;
     between i and j is at most k.
  */
 public class Leet219ContainsDuplicateIi {
+    // LeetCode hates lambdas.
     private static final Comparator<int[]> C = new Comparator<int[]>() {
         @Override
         public int compare(int[] a, int[] b) {
