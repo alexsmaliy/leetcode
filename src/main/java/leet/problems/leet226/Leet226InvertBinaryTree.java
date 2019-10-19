@@ -6,7 +6,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class Leet226InvertBinaryTree {
-    public TreeNode invertTree(TreeNode root) {
+    public static TreeNode invertTree(TreeNode root) {
         if (root == null || (root.left == null && root.right == null)) {
             return root;
         }
