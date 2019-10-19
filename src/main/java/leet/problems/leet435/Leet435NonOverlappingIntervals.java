@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class Leet435NonOverlappingIntervals {
+    // LeetCode hates lambdas, and especially inline lambdas.
     private static final Comparator<int[]> C = new Comparator<int[]>() {
         @Override
         public int compare(int[] a, int[] b) {
