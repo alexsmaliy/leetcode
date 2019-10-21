@@ -3,7 +3,7 @@ package leet.problems.leet238;
 import java.util.Arrays;
 
 public class Leet238ProductOfArrayExceptSelf {
-    public int[] productExceptSelf(int[] nums) {
+    public static int[] productExceptSelf(int[] nums) {
         if (nums.length == 1) { return new int[0]; }
         int[] output = new int[nums.length];
         Arrays.fill(output, 1);
@@ -18,7 +18,7 @@ public class Leet238ProductOfArrayExceptSelf {
         return output;
     }
 
-    public int[] productExceptSelf2(int[] nums) {
+    public static int[] productExceptSelf2(int[] nums) {
         int product = 1;
         int max = 0;
         int countZeros = 0;
@@ -64,7 +64,7 @@ public class Leet238ProductOfArrayExceptSelf {
         return output;
     }
 
-    private int divide(int dividend, int divisor) {
+    private static int divide(int dividend, int divisor) {
         int adj = Integer.numberOfLeadingZeros(divisor) - Integer.numberOfLeadingZeros(dividend);
         divisor <<= adj;
         int quotient = 0;
