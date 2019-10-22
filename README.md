@@ -44,6 +44,7 @@ Table of Contents
 | [LC 141](https://leetcode.com/problems/linked-list-cycle/) | [Linked List Cycle](./src/main/java/leet/problems/leet141) |
 | [LC 142](https://leetcode.com/problems/linked-list-cycle-ii/) | [Linked List Cycle II](./src/main/java/leet/problems/leet142) |
 | [LC 153](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | [Find Minimum in Rotated Sorted Array](./src/main/java/leet/problems/leet153) |
+| [LC 198](https://leetcode.com/problems/house-robber/) | [House Robber](./src/main/java/leet/problems/leet198) |
 | [LC 200](https://leetcode.com/problems/number-of-islands/) | [Number of Islands](./src/main/java/leet/problems/leet200) |
 | [LC 206](https://leetcode.com/problems/reverse-linked-list/) | [Reverse Linked List](./src/main/java/leet/problems/leet206) |
 | [LC 207](https://leetcode.com/problems/course-schedule/) | [Course Schedule](./src/main/java/leet/problems/leet207) |
