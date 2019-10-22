@@ -31,6 +31,7 @@ Table of Contents
 | [LC 26](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | [Remove Duplicates from Sorted Array](./src/main/java/leet/problems/leet26) |
 | [LC 49](https://leetcode.com/problems/group-anagrams/) | [Group Anagrams](./src/main/java/leet/problems/leet49) |
 | [LC 53](https://leetcode.com/problems/maximum-subarray/) | [Maximum Subarray](./src/main/java/leet/problems/leet53) |
+| [LC 55](https://leetcode.com/problems/jump-game/) | [Jump Game](./src/main/java/leet/problems/leet55) |
 | [LC 56](https://leetcode.com/problems/merge-intervals/) | [Merge Intervals](./src/main/java/leet/problems/leet56) |
 | [LC 70](https://leetcode.com/problems/climbing-stairs/) | [Climbing Stairs](./src/main/java/leet/problems/leet70) |
 | [LC 76](https://leetcode.com/problems/minimum-window-substring/) | [Minimum Window Substring](./src/main/java/leet/problems/leet76) |
