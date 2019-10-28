@@ -35,8 +35,7 @@ Discussion
 
  For any given *i*, we only need to look as far ahead as the length of the
  longest word in the dictionary. We could even keep a list of the exact word
- lengths to avoid checing substrings that cannot be valid words, or even keep
- the words in a prefix tree, but that seems like overkill.
+ lengths to avoid checking substrings that cannot be valid words.
  <pre><tt>Words: and, cat, cats, dog, dogs, sand
 
 [ c a t s a n d o g s ]
