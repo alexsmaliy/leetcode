@@ -43,3 +43,6 @@ If we sort the coins up-front, we can even skip the check for whether the index
 Similar to, but different from [Coin Change](../leet322). This one
 asks for permutations of coins. That one asks for the fewest coins needed to
 make up the target amount. There are so many ways to make change.
+
+Also see [Combination Sum](../leet39), which asks for unique *combinations* of
+coins that add up to the target amount.
