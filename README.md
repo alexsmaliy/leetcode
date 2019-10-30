@@ -52,6 +52,7 @@ Table of Contents
 | [LC 206](https://leetcode.com/problems/reverse-linked-list/) | [Reverse Linked List](./src/main/java/leet/problems/leet206) |
 | [LC 207](https://leetcode.com/problems/course-schedule/) | [Course Schedule](./src/main/java/leet/problems/leet207) |
 | [LC 208](https://leetcode.com/problems/implement-trie-prefix-tree/) | [Implement Trie (Prefix Tree)](./src/main/java/leet/problems/leet208) |
+| [LC 212](https://leetcode.com/problems/word-search-ii/) | [Word Search II](./src/main/java/leet/problems/leet212) |
 | [LC 213](https://leetcode.com/problems/house-robber-ii/) | [House Robber II](./src/main/java/leet/problems/leet213) |
 | [LC 217](https://leetcode.com/problems/contains-duplicate/) | [Contains Duplicate](./src/main/java/leet/problems/leet217) |
 | [LC 219](https://leetcode.com/problems/contains-duplicate-ii/) | [Contains Duplicate II](./src/main/java/leet/problems/leet219) |
