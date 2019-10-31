@@ -30,6 +30,7 @@ Table of Contents
 | [LC 23](https://leetcode.com/problems/merge-k-sorted-lists/) | [Merge k Sorted Lists](./src/main/java/leet/problems/leet23) |
 | [LC 26](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | [Remove Duplicates from Sorted Array](./src/main/java/leet/problems/leet26) |
 | [LC 39](https://leetcode.com/problems/combination-sum/) | [Combination Sum](./src/main/java/leet/problems/leet39) |
+| [Lc 40](https://leetcode.com/problems/combination-sum-ii/) | [Combination Sum II](./src/main/java/leet/problems/leet40) |
 | [LC 49](https://leetcode.com/problems/group-anagrams/) | [Group Anagrams](./src/main/java/leet/problems/leet49) |
 | [LC 53](https://leetcode.com/problems/maximum-subarray/) | [Maximum Subarray](./src/main/java/leet/problems/leet53) |
 | [LC 55](https://leetcode.com/problems/jump-game/) | [Jump Game](./src/main/java/leet/problems/leet55) |
