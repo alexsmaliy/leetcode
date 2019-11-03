@@ -67,7 +67,7 @@ public class Leet39CombinationSum {
         if (ways[row][col] == 0) {
             return traverse(ways, coins, row + 1, col, nrows, prefix);
         }
-        // Normal case: soe combinations continue with this coin and some do not. Return the union
+        // Normal case: some combinations continue with this coin and some do not. Return the union
         // of both.
         int[] newPrefix = Arrays.copyOf(prefix, prefix.length + 1);
         newPrefix[prefix.length] = coins[row];
