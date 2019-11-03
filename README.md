@@ -72,5 +72,6 @@ Table of Contents
 | [LC 424](https://leetcode.com/problems/longest-repeating-character-replacement/) | [Longest Repeating Character Replacement](./src/main/java/leet/problems/leet424) |
 | [LC 435](https://leetcode.com/problems/non-overlapping-intervals/) | [Non-Overlapping Intervals](./src/main/java/leet/problems/leet435) |
 | [LC 442](https://leetcode.com/problems/find-all-duplicates-in-an-array/) | [Find All Duplicates in an Array](./src/main/java/leet/problems/leet442) |
+| [LC 725](https://leetcode.com/problems/split-linked-list-in-parts/) | [Split Linked List in Parts](./src/main/java/leet/problems/leet725) |
 | [LC 1047](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/) | [Remove All Adjacent Duplicates in String](./src/main/java/leet/problems/leet1047) |
 | [LC 1209](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/) | [Remove All Adjacent Duplicates in String II](./src/main/java/leet/problems/leet1209) |
