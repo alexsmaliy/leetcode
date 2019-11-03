@@ -50,36 +50,36 @@ public class Leet39CombinationSum {
     // and is all ones.
     private static int[][] traverse(int[][] ways,
                                     int[] coins,
-                                    int r,
-                                    int c,
-                                    int nrow,
+                                    int row,
+                                    int col,
+                                    int nrows,
                                     int[] prefix) {
-        // Reached the bottom of the table. No more coins to consider.
-        if (r == nrow - 1) {
-            return EMPTY_ARRAY;
-        }
         // Reached left edge of the table having accumulated the full target amount. The prefix is
         // now a full, valid combination, so let's return it.
-        if (c == 0) {
+        if (col == 0) {
             return new int[][] { prefix };
         }
+        // Reached the bottom of the table. No more coins to consider.
+        if (row == nrows - 1) {
+            return EMPTY_ARRAY;
+        }
         // No valid combination continues with this coin, so consider coins below.
-        if (ways[r][c] == 0) {
-            return traverse(ways, coins, r + 1, c, nrow, prefix);
+        if (ways[row][col] == 0) {
+            return traverse(ways, coins, row + 1, col, nrows, prefix);
         }
         // Normal case: soe combinations continue with this coin and some do not. Return the union
         // of both.
         int[] newPrefix = Arrays.copyOf(prefix, prefix.length + 1);
-        newPrefix[prefix.length] = coins[r];
-        int[][] backwards = traverse(ways, coins, r, c - coins[r], nrow, newPrefix);
-        int[][] down = traverse(ways, coins, r + 1, c, nrow, prefix);
+        newPrefix[prefix.length] = coins[row];
+        int[][] goLeft = traverse(ways, coins, row, col - coins[row], nrows, newPrefix);
+        int[][] goDown = traverse(ways, coins, row + 1, col, nrows, prefix);
 
-        int[][] ret = new int[backwards.length + down.length][];
-        for (int i = 0; i < backwards.length; i++) {
-            ret[i] = backwards[i];
+        int[][] ret = new int[goLeft.length + goDown.length][];
+        for (int i = 0; i < goLeft.length; i++) {
+            ret[i] = goLeft[i];
         }
-        for (int i = 0; i < down.length; i++) {
-            ret[i + backwards.length] = down[i];
+        for (int i = 0; i < goDown.length; i++) {
+            ret[i + goLeft.length] = goDown[i];
         }
         return ret;
     }
