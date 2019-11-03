@@ -114,3 +114,20 @@ number of coins, so the recursion should never get too deep.
 Similar to [Coin Change](../leet322) and [Combination Sum IV](../leet377). The
 former asks for the smallest solution size. The latter considers solutions that
 are only different in coin order to be distinct.
+
+An Aside
+--------
+
+At first it seemed like a waste to do a second pass over the table to assemble
+the combinations. You can, in fact, assemble the combinations as you fill in
+the table. Instead of adding up the integer values as part of the recurrence
+relation, you could append new elements to a set of prefixes. Each cell would
+then hold the list of valid combinations for that row and column in the table.
+
+Sadly, at least in Java, you'd then have to make a deep copy of the combinations
+you retrieve from preceding cells. Otherwise, after setting the value at some
+row and column (*r*, *c*), you'd keep iterating through the row, and making
+changes to (*r*, *c*&thinsp;+&thinsp;1), and so on. But all those changes would
+then affect what you saved at (*r*, *c*), so when you went one row up, you'd now
+have the wrong set of prefixes. We vastly reduce the amount of copying if we do
+not compute the complete set of combinations for each cell.
