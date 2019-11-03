@@ -4,7 +4,6 @@ import leet.types.Node;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
 
@@ -27,14 +26,13 @@ import java.util.function.BiFunction;
  *   4 ----- 3
  */
 public class Leet133CloneGraph {
-    public Node cloneGraph(Node node) {
-        Map<Integer, Node> created = new HashMap<>();
-        return dfs(node, created);
+    public static Node cloneGraph(Node node) {
+        Map<Integer, Node> alreadyCreated = new HashMap<>();
+        return dfs(node, alreadyCreated);
     }
 
-    private Node dfs(Node node, Map<Integer, Node> created) {
+    private static Node dfs(Node node, Map<Integer, Node> created) {
         Node nCopy = created.compute(node.val, MAPPER);
-        nCopy.neighbors = new ArrayList<>();
         for (int i = 0; i < node.neighbors.size(); i++) {
             Node ithNeighbor = node.neighbors.get(i);
             if (created.containsKey(ithNeighbor.val)) {
@@ -50,11 +48,15 @@ public class Leet133CloneGraph {
     // LeetCode's JVM must be pretty bad at optimizing code. Without
     // extracting this lambda into a static variable, the solution
     // performs pretty dismally on LC.
-    private static final BiFunction<Integer, Node, Node> MAPPER = (num, node) -> {
-        if (node == null) {
-            return new Node(num, new ArrayList<>());
-        } else {
-            return node;
-        }
-    };
+    private static final BiFunction<Integer, Node, Node> MAPPER =
+        new BiFunction<Integer, Node, Node>() {
+            @Override
+            public Node apply(Integer integer, Node node) {
+                if (node == null) {
+                    return new Node(integer, new ArrayList<>());
+                } else {
+                    return node;
+                }
+            }
+        };
 }
