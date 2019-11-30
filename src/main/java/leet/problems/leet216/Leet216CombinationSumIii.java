@@ -28,7 +28,7 @@ public class Leet216CombinationSumIii {
             combos.add(combo);
             return;
         }
-        // If we haven'y consumed k digits yet, try adding each of the remaining
+        // If we haven't consumed k digits yet, try adding each of the remaining
         // digits in turn.
         if (numSet < targetLength) {
             for (int i = cursor; i < 9; i++) {
